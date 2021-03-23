@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     float f_H, f_V, f_MoveLimiter = 0.7f;
 
     public float f_Speed = 20f;
+
+    public Canvas cnv_RespawnCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +37,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         m_Rigidbody.velocity = new Vector2(f_H * f_Speed, f_V * f_Speed);
+    }
+
+    public void Die()
+    {
+        cnv_RespawnCanvas.gameObject.active = true;
+    }
+
+    public void Stop()
+    {
+        m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void Respawn()
+    {
+        int i_CurrentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(i_CurrentScene);
     }
 }
