@@ -27,7 +27,7 @@ public class ArrowMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Rigidbody.velocity = transform.up * f_Speed;
+        m_Rigidbody.velocity = transform.up * -f_Speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
