@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemPickup : MonoBehaviour
 {
     public Image img_IconImage;
+    public EnchantingTable scr_EnchantingTable;
 
     private Sprite spr_Sprite;
 
@@ -13,6 +14,7 @@ public class ItemPickup : MonoBehaviour
     void Start()
     {
         spr_Sprite = GetComponent<SpriteRenderer>().sprite;
+        scr_EnchantingTable = GameObject.FindGameObjectWithTag("EnchantingTable").GetComponent<EnchantingTable>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class ItemPickup : MonoBehaviour
         {
             Destroy(this.gameObject);
             img_IconImage.sprite = spr_Sprite;
+            scr_EnchantingTable.SendMessage("ItemCollected");
         }
     }
 }

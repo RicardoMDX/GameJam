@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        cnv_RespawnCanvas.gameObject.active = true;
+        cnv_RespawnCanvas.gameObject.SetActive(true);
     }
 
     public void Stop()
