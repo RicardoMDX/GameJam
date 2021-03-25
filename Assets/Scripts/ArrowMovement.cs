@@ -36,7 +36,7 @@ public class ArrowMovement : MonoBehaviour
         {
             scr_Player.SendMessage("Die");
         }
-        else if(collision.gameObject.tag!="Item")
+        else if(collision.gameObject.tag=="Wall")
         {
             Destroy(this.gameObject);
         }
