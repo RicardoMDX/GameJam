@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     float f_H, f_V, f_MoveLimiter = 0.7f;
 
     public float f_Speed = 20f;
+    public int i_Health = 3;
+    public Image[] img_Hearts;
+    public Sprite spr_BlackHeart;
 
     public Canvas cnv_RespawnCanvas;
 
@@ -26,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     {
         f_H = Input.GetAxis("Horizontal");
         f_V = Input.GetAxis("Vertical");
+        if (i_Health <= 0)
+        {
+            Die();
+        }
     }
 
     private void FixedUpdate()
@@ -49,9 +56,14 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
+    public void TakeDamage()
+    {
+        img_Hearts[i_Health - 1].sprite = spr_BlackHeart;
+        i_Health--;
+    }
+
     public void Respawn()
     {
-        int i_CurrentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(i_CurrentScene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

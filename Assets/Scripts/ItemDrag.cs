@@ -8,22 +8,24 @@ public class ItemDrag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     [SerializeField] private Canvas canvas;
 
     public GameObject go_Spot;
+    public EnchantingTable scr_EnchantingTable;
 
     private RectTransform rectTransform;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        scr_EnchantingTable = GameObject.FindGameObjectWithTag("EnchantingTable").GetComponent<EnchantingTable>();
     }
 
     public void Update()
     {
         float distance = Vector3.Distance(go_Spot.transform.position,this.transform.position);
-        Debug.Log(distance);
         if(distance<=50)
         {
             this.transform.SetPositionAndRotation(go_Spot.transform.position, go_Spot.transform.rotation);
             this.GetComponent<ItemDrag>().enabled = false;
+            scr_EnchantingTable.i_ItemsCorrect++;
         }
     }
 

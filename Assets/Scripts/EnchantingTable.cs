@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnchantingTable : MonoBehaviour
 {
 
-    public int i_ItemsCollected=0;
+    public int i_ItemsCollected=0, i_ItemsCorrect=0;
 
     private bool bl_PlayerInRange=false;
     private Canvas cnv_InteractionCanvas;
@@ -24,6 +25,11 @@ public class EnchantingTable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && bl_PlayerInRange && i_ItemsCollected==3)
         {
             Debug.Log("Next level");
+        }
+
+        if (i_ItemsCorrect == 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
@@ -43,10 +49,5 @@ public class EnchantingTable : MonoBehaviour
             cnv_InteractionCanvas.gameObject.SetActive(false);
             bl_PlayerInRange = false;
         }
-    }
-
-    public void ItemCollected()
-    {
-        i_ItemsCollected++;
     }
 }

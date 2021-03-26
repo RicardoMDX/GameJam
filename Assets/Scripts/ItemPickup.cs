@@ -29,7 +29,7 @@ public class ItemPickup : MonoBehaviour
         {
             Destroy(this.gameObject);
             img_IconImage.sprite = spr_Sprite;
-            scr_EnchantingTable.SendMessage("ItemCollected");
+            scr_EnchantingTable.i_ItemsCollected++;
         }
     }
 }

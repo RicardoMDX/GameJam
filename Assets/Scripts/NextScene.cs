@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
+
+    public Canvas cnv_Rules;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +23,15 @@ public class NextScene : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ShowRules()
+    {
+        cnv_Rules.gameObject.SetActive(true);
+    }
+
+    public void CloseRules()
+    {
+        cnv_Rules.gameObject.SetActive(false);
     }
 }
