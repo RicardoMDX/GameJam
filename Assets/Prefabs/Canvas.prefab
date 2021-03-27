@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &118058207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a66f7fe515ea3d947b452da8ba7a7b5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -480,6 +480,7 @@ MonoBehaviour:
   canvas: {fileID: 2676255056448871244}
   go_Spot: {fileID: 1674763256}
   scr_EnchantingTable: {fileID: 0}
+  audC_ItemPlacing: {fileID: 0}
 --- !u!1 &1186849759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1547,7 @@ MonoBehaviour:
   canvas: {fileID: 2676255056448871244}
   go_Spot: {fileID: 2676255056691218702}
   scr_EnchantingTable: {fileID: 0}
+  audC_ItemPlacing: {fileID: 0}
 --- !u!1 &2676255055868870600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2335,7 @@ MonoBehaviour:
   canvas: {fileID: 2676255056448871244}
   go_Spot: {fileID: 1852750646}
   scr_EnchantingTable: {fileID: 0}
+  audC_ItemPlacing: {fileID: 0}
 --- !u!1 &2676255056640755676
 GameObject:
   m_ObjectHideFlags: 0

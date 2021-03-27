@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class EnchantingTable : MonoBehaviour
 {
 
+    AudioSource audS_Table;
+
     public int i_ItemsCollected=0, i_ItemsCorrect=0;
+    public AudioClip audC_ItemComplete;
 
     private bool bl_PlayerInRange=false;
     private Canvas cnv_InteractionCanvas;
@@ -29,6 +32,7 @@ public class EnchantingTable : MonoBehaviour
 
         if (i_ItemsCorrect == 3)
         {
+            audS_Table.PlayOneShot(audC_ItemComplete);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

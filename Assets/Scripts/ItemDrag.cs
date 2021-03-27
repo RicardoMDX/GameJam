@@ -6,9 +6,11 @@ using UnityEngine.EventSystems;
 public class ItemDrag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
+    AudioSource audS_Item;
 
     public GameObject go_Spot;
     public EnchantingTable scr_EnchantingTable;
+    public AudioClip audC_ItemPlacing;
 
     private RectTransform rectTransform;
 
@@ -23,6 +25,7 @@ public class ItemDrag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         float distance = Vector3.Distance(go_Spot.transform.position,this.transform.position);
         if(distance<=50)
         {
+            audS_Item.PlayOneShot(audC_ItemPlacing);
             this.transform.SetPositionAndRotation(go_Spot.transform.position, go_Spot.transform.rotation);
             this.GetComponent<ItemDrag>().enabled = false;
             scr_EnchantingTable.i_ItemsCorrect++;
