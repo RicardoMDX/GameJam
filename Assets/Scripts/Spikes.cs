@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
+    public AudioClip audC_Spikes;
+    public Sprite spr_Spikes;
 
     private float f_Time, f_Timer = 2f;
     private bool b_Stepped=false;
 
+    AudioSource audS_Spikes;
     PlayerMovement scr_Player;
 
     // Start is called before the first frame update
     void Start()
     {
         scr_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        audS_Spikes = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,8 @@ public class Spikes : MonoBehaviour
     {
         if(collision.gameObject.tag=="Player")
         {
+            GetComponent<SpriteRenderer>().sprite = spr_Spikes;
+            audS_Spikes.PlayOneShot(audC_Spikes);
             f_Time = Time.time;
             scr_Player.SendMessage("Stop");
             b_Stepped = true;

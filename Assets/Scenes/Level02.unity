@@ -1187,6 +1187,18 @@ PrefabInstance:
       propertyPath: cnv_Introduction
       value: 
       objectReference: {fileID: 586884194}
+    - target: {fileID: 5205334690706154202, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
+      propertyPath: f_YLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205334690706154202, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
+      propertyPath: go_Player
+      value: 
+      objectReference: {fileID: 269238334}
+    - target: {fileID: 5205334690706154202, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
+      propertyPath: cnv_Introduction
+      value: 
+      objectReference: {fileID: 586884194}
     - target: {fileID: 7347940606732269344, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1258,9 +1270,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7347940606732269372, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
   m_PrefabInstance: {fileID: 269238333}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &269238335 stripped
+--- !u!114 &269238336 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5000807895876018472, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5205334690706154202, guid: 74dfed4913f1b2e4ebeb9b7de40143f7, type: 3}
   m_PrefabInstance: {fileID: 269238333}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269238334}
@@ -2127,10 +2139,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118058203, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 440418551, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 269238335}
+      objectReference: {fileID: 269238336}
     - target: {fileID: 440418551, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseCanvas
@@ -2162,6 +2178,26 @@ PrefabInstance:
     - target: {fileID: 1186849761, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
       propertyPath: m_Text
       value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666444720, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666444720, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: MaxDistance
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666444720, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: MinDistance
+      value: 990.099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666444720, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 830bcd9033347f04889a7b6a9c74a2ef, type: 3}
+    - target: {fileID: 1666444720, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1674763256, guid: 975c1f25c94e5ac469a628c67f6db280, type: 3}
       propertyPath: m_Name

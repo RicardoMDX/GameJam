@@ -7,7 +7,7 @@ public class ArrowMovement : MonoBehaviour
 {
 
     public float f_Speed = 10f;
-    public AudioClip audC_ArrowShooting, audC_ArrowHitting;
+    public AudioClip audC_ArrowHitting, audC_ArrowHit;
 
     AudioSource audS_Source;
     Rigidbody2D m_Rigidbody;
@@ -20,7 +20,6 @@ public class ArrowMovement : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();
         scr_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         this.transform.parent = null;
-        audS_Source.PlayOneShot(audC_ArrowShooting);
     }
 
     // Update is called once per frame
@@ -39,6 +38,7 @@ public class ArrowMovement : MonoBehaviour
         if(collision.gameObject.tag=="Player")
         {
             scr_Player.SendMessage("TakeDamage");
+            audS_Source.PlayOneShot(audC_ArrowHit);
         }
         else if(collision.gameObject.tag=="Wall")
         {

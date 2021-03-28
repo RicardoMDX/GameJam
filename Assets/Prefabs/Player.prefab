@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7347940606732269346}
   - component: {fileID: 7347940606732269347}
   - component: {fileID: 7347940606732269351}
-  - component: {fileID: 5000807895876018472}
+  - component: {fileID: 5205334690706154202}
   - component: {fileID: 1833329649}
   m_Layer: 0
   m_Name: Player
@@ -231,7 +231,7 @@ MonoBehaviour:
   audC_PlayerWalking: {fileID: 8300000, guid: e154476a46c89bb40bf7bb3c524ff11b, type: 3}
   audC_GameOver: {fileID: 8300000, guid: 897a0ee5abf99774fbb2539bb278b8d0, type: 3}
   cnv_RespawnCanvas: {fileID: 0}
---- !u!114 &5000807895876018472
+--- !u!114 &5205334690706154202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7170e85d309872f429eb16c724bf4c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go_Player: {fileID: 7347940606732269372}
+  go_Player: {fileID: 0}
   cnv_Introduction: {fileID: 0}
   f_YLevel: -27
 --- !u!82 &1833329649
