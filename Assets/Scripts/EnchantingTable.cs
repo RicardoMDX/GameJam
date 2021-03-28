@@ -10,7 +10,7 @@ public class EnchantingTable : MonoBehaviour
     AudioSource audS_Table;
 
     public int i_ItemsCollected=0, i_ItemsCorrect=0;
-    public AudioClip audC_ItemComplete;
+    public Canvas cnv_PuzzleCanvas;
 
     private bool bl_PlayerInRange=false;
     private Canvas cnv_InteractionCanvas;
@@ -18,6 +18,7 @@ public class EnchantingTable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audS_Table = GetComponent<AudioSource>();
         cnv_InteractionCanvas = GetComponentInChildren<Canvas>();
         cnv_InteractionCanvas.gameObject.SetActive(false);
     }
@@ -27,12 +28,12 @@ public class EnchantingTable : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && bl_PlayerInRange && i_ItemsCollected==3)
         {
-            Debug.Log("Next level");
+            cnv_PuzzleCanvas.gameObject.SetActive(true);
         }
 
         if (i_ItemsCorrect == 3)
         {
-            audS_Table.PlayOneShot(audC_ItemComplete);
+            audS_Table.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

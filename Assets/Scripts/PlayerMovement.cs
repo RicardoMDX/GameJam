@@ -71,8 +71,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage()
     {
-        img_Hearts[i_Health - 1].sprite = spr_BlackHeart;
-        i_Health--;
+        if (i_Health > 0)
+        {
+            img_Hearts[i_Health - 1].sprite = spr_BlackHeart;
+            i_Health--;
+        }
     }
 
     public void Respawn()

@@ -10,12 +10,12 @@ public class ItemDrag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public GameObject go_Spot;
     public EnchantingTable scr_EnchantingTable;
-    public AudioClip audC_ItemPlacing;
 
     private RectTransform rectTransform;
 
     private void Awake()
     {
+        audS_Item = GetComponent<AudioSource>();
         rectTransform = GetComponent<RectTransform>();
         scr_EnchantingTable = GameObject.FindGameObjectWithTag("EnchantingTable").GetComponent<EnchantingTable>();
     }
@@ -25,7 +25,7 @@ public class ItemDrag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         float distance = Vector3.Distance(go_Spot.transform.position,this.transform.position);
         if(distance<=50)
         {
-            audS_Item.PlayOneShot(audC_ItemPlacing);
+            audS_Item.Play();
             this.transform.SetPositionAndRotation(go_Spot.transform.position, go_Spot.transform.rotation);
             this.GetComponent<ItemDrag>().enabled = false;
             scr_EnchantingTable.i_ItemsCorrect++;

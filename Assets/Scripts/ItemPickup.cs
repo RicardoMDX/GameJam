@@ -33,6 +33,7 @@ public class ItemPickup : MonoBehaviour
             audS_Item.Play();
             Destroy(this.gameObject);
             img_IconImage.sprite = spr_Sprite;
+            img_IconImage.color= new Color(255, 255, 255, 255);
             scr_EnchantingTable.i_ItemsCollected++;
         }
     }

@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i_ItemsCollected: 0
+  i_ItemsCorrect: 0
+  audC_ItemComplete: {fileID: 8300000, guid: da5741aaa03d2544e8b4bfda95aa2d46, type: 3}
+  cnv_InteractionCanvas: {fileID: 0}
 --- !u!1 &3707203539876322710
 GameObject:
   m_ObjectHideFlags: 0
